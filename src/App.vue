@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import { ref } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
+const value = ref('1234')
 </script>
 
 <template>
@@ -9,7 +11,10 @@ import HelloWorld from './components/HelloWorld.vue'
 
     <div class="wrapper bg-red-600">
       <HelloWorld msg="You did it!" />
-
+      <div class="card flex justify-center">
+        <PrimeButton :label="value" icon="pi pi-check" />
+        <PrimeInputText type="text" v-model="value" />
+      </div>
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
